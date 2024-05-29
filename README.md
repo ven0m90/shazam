@@ -3,7 +3,7 @@
 ```console
 sudo apt install -y git ; git clone https://github.com/ven0m90/shazam 
 chmod +x shazam/* 
-bash install-shazam
+bash shazam/install-shazam
 ```
 # Note! 
 add your blind xss payload

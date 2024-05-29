@@ -319,6 +319,8 @@ mv .gau.toml ~/.gau.toml
 #
 cent init
 echo -e "\033[33m[+]Installing nuclei templates \033[m"
+git clone https://github.com/0xKayala/fuzzing-templates.git ~/fuzzing-templates
+
 cent -p ~/cent-nuclei-templates
 nuclei -update-templates 
 

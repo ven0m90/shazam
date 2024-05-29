@@ -1,0 +1,18 @@
+#repair
+sudo rm /var/lib/apt/lists/lock
+sudo rm /var/lib/dpkg/lock
+sudo rm /var/cache/apt/archives/lock
+sudo rm /var/lib/dpkg/lock-frontend
+sudo apt update  ; sudo apt clean ; sudo apt autoclean ; sudo apt upgrade -y ; sudo apt autoremove -y 
+
+sudo rm /var/lib/apt/lists/lock
+sudo rm /var/cache/apt/archives/lock
+sudo rm /var/lib/dpkg/lock*
+#repair
+sudo rm /var/lib/apt/lists/lock
+sudo rm /var/lib/dpkg/lock
+sudo rm /var/cache/apt/archives/lock
+sudo rm /var/lib/dpkg/lock-frontend
+sudo mv /usr/sbin/telinit /usr/sbin/telinit.bak 
+sudo ln -s /usr/bin/true /usr/sbin/telinit
+sudo apt update  ; sudo apt clean ; sudo apt autoclean ; sudo apt upgrade -y ; sudo apt autoremove -y 

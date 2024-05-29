@@ -1,0 +1,45 @@
+#!/bin/bash
+
+
+#check
+
+if [ "$1" == "" ]
+then
+    echo -e "\033[36mUsage:\033[m $0 domains.txt  "
+    echo -e "\033[31m [ Must Be Login On Github ] \033[m  "
+
+    exit
+fi
+
+#check
+
+
+host=$1
+
+
+for domains in $(cat $host);
+do
+
+echo -e                    "\033[31m             [  Must Be Login On Github  ] \033[m  "
+echo -e "\033[32m_________________________________________________________________\033[m"
+
+#aws-keys
+
+echo "https://github.com/search?q="$domains"+aws_access_key_id&type=Code"
+echo "https://github.com/search?q="$domains"+SECRET_KEY&type=Code"
+echo "https://github.com/search?q="$domains"+api_key&type=Code"
+echo "https://github.com/search?q="$domains"+aws_access&type=Code"
+echo "https://github.com/search?q="$domains"+aws_key&type=Code"
+echo "https://github.com/search?q="$domains"+aws_secret&type=Code"
+echo "https://github.com/search?q="$domains"+aws_token&type=Code"
+echo "https://github.com/search?q="$domains"+AWSSecretKey&type=Code"
+echo "https://github.com/search?q="$domains"+access_key&type=Code"
+echo "https://github.com/search?q="$domains"+access_token&type=Code"
+echo "https://github.com/search?q="$domains"+api_secret&type=Code"
+echo "https://github.com/search?q="$domains"+secret_key&type=Code"
+echo "https://github.com/search?q="$domains"+secret_token&type=Code"
+echo "https://github.com/search?q="$domains"+secrets&type=Code"
+echo "https://github.com/search?q="$domains"+client_secret&type=Code"
+
+
+done

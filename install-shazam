@@ -1,0 +1,334 @@
+#!/bin/bash
+#tools-install
+# ----------------------------------
+# Colors
+# ----------------------------------
+NOCOLOR='\033[0m'             # No Color
+RED='\033[0;31m'
+GREEN='\033[0;32m'
+ORANGE='\033[0;33m'
+BLUE='\033[0;34m'
+PURPLE='\033[0;35m'
+CYAN='\033[0;36m'
+LIGHTGRAY='\033[0;37m'
+DARKGRAY='\033[1;30m'
+LIGHTRED='\033[1;31m'
+LIGHTGREEN='\033[1;32m'
+YELLOW='\033[1;33m'
+LIGHTBLUE='\033[1;34m'
+LIGHTPURPLE='\033[1;35m'
+LIGHTCYAN='\033[1;36m'
+WHITE='\033[1;37m'
+CG='\033[1;38;5;087m'
+CP='\033[1;38;5;221m'
+CPO='\033[1;38;5;205m'
+CN='\033[1;38;5;247m'
+CNC='\033[1;38;5;051m'
+
+
+
+Installing_dependencies (){
+#Check Operating System
+
+    echo -e ${YELLOW}"[+]Checking For Operating System\n"
+	#Check Operating System
+	OS=$(lsb_release -i 2> /dev/null | sed 's/:\t/:/' | cut -d ':' -f 2-)
+	if [ "$OS" == "Debian" ] || [ "$OS" == "Linuxmint" ]; then
+		#Specific Debian
+		echo -e "\033[34m[+]Installing dependencies.. For $OS \033[m"
+
+	    sudo apt update  ; sudo apt clean ; sudo apt autoclean ; sudo apt upgrade -y ; sudo apt autoremove -y > /dev/null 2>&1;
+        sudo apt install toilet lolcat xterm figlet tar neofetch git vim ripgrep curl  python3 python3-pip  wget  nmap xsltproc  htop   p7zip-full  masscan  gdu  hydra  build-essential libpcap-dev libusb-1.0-0-dev libnetfilter-queue-dev   jq  chromium-browser software-properties-common  build-essential  python3-pip curl gnupg lsb-release -y 
+        
+        #go-install
+		echo -e "\033[34m[+]Installing GO.. For $OS \033[m"
+
+        sudo add-apt-repository ppa:longsleep/golang-backports -y
+        sudo apt update > /dev/null 2>&1;
+        sudo apt install golang-go -y > /dev/null 2>&1;
+        
+
+
+	elif [ "$OS" == "Ubuntu" ]; then
+		#Specific Ubuntu
+		echo -e "\033[34m[+]Installing dependencies.. For $OS \033[m"
+
+	    sudo apt update  ; sudo apt clean ; sudo apt autoclean ; sudo apt upgrade -y ; sudo apt autoremove -y > /dev/null 2>&1;
+        sudo apt install toilet lolcat xterm figlet tar neofetch git vim ripgrep curl  python3 python3-pip  wget  nmap xsltproc  htop   p7zip-full  masscan  gdu  hydra  build-essential libpcap-dev libusb-1.0-0-dev libnetfilter-queue-dev   jq  chromium-browser software-properties-common  build-essential  python3-pip curl gnupg lsb-release -y 
+        
+        #go-install
+		echo -e "\033[34m[+]Installing GO.. For $OS \033[m"
+
+        sudo add-apt-repository ppa:longsleep/golang-backports -y
+        sudo apt update > /dev/null 2>&1;
+        sudo apt install golang-go -y > /dev/null 2>&1;
+        
+     
+	elif [ "$OS" == "Kali" ]; then
+		#Specific Kali Linux
+		echo -e "\033[34m[+]Installing dependencies.. For $OS \033[m"
+ sudo apt update  ; sudo apt clean ; sudo apt autoclean ; sudo apt upgrade -y ; sudo apt autoremove -y 
+
+
+        sudo apt install toilet lolcat xterm figlet tar neofetch git vim ripgrep curl  python3 python3-pip  wget  nmap xsltproc  htop   p7zip-full  masscan  gdu  hydra  build-essential libpcap-dev libusb-1.0-0-dev libnetfilter-queue-dev   jq  chromium build-essential  python3-pip curl gnupg lsb-release -y 
+        
+        #go-install
+		echo -e "\033[34m[+]Installing GO.. For $OS \033[m"
+        sudo apt install golang -y 
+
+
+
+
+	elif [ "$OS" == "Parrot" ]; then
+		#Specific Parrot Linux
+		echo -e "\033[34m[+]Installing dependencies.. For $OS \033[m"
+
+	    sudo apt update  ; sudo apt clean ; sudo apt autoclean ; sudo apt upgrade -y ; sudo apt autoremove -y > /dev/null 2>&1;
+
+        sudo apt install toilet lolcat xterm figlet tar neofetch git vim ripgrep curl  python3 python3-pip  wget  nmap xsltproc  htop   p7zip-full  masscan  gdu  hydra  build-essential libpcap-dev libusb-1.0-0-dev libnetfilter-queue-dev   jq  chromium build-essential  python3-pip -y > /dev/null 2>&1;
+        
+        #go-install
+		echo -e "\033[34m[+]Installing GO.. For $OS \033[m"
+        sudo apt install golang -y > /dev/null 2>&1;
+
+            
+	else
+        	echo -e ${RED}"[+]OS unrecognized. Please check the compatibility with your system.";
+        	echo -e ${RED}"[+]End of the script";
+        exit;
+	fi
+
+
+}
+Installing_dependencies
+
+sleep 2
+
+#installing-tools
+tools(){
+
+mkdir -p ~/tools
+cd ~/tools
+
+echo -e "\033[33m[+]Installing...Tools \033[m";
+sleep 2
+
+curl -LO https://github.com/findomain/findomain/releases/latest/download/findomain-linux.zip
+unzip findomain*
+sudo chmod +x findomain
+sudo mv findomain /usr/bin/findomain
+sudo rm findomain*
+
+curl -LO https://github.com/michenriksen/aquatone/releases/download/v1.7.0/aquatone_linux_amd64_1.7.0.zip
+unzip aquatone*
+sudo chmod +x aquatone
+sudo mv aquatone /usr/bin/aquatone
+sudo rm  LICENSE.txt  README.md aquatone*
+
+
+echo -e "\033[36m[+]nmap-vulners Updating...\033[m" 
+chmod +rwx /usr/share/nmap/scripts/
+sudo rm  vulners.nse* 
+sudo rm  /usr/share/nmap/scripts/vulners.nse* 
+sudo wget https://raw.githubusercontent.com/vulnersCom/nmap-vulners/master/vulners.nse ;sudo mv vulners.nse /usr/share/nmap/scripts/ 
+
+
+
+#xss-tools
+git clone https://github.com/devanshbatham/paramspider
+cd paramspider
+chmod +x *
+xterm -e pip install .
+cd ..
+
+
+#gf
+wget https://raw.githubusercontent.com/emadshanab/Gf-Patterns-Collection/main/set-all.sh
+chmod +x *
+bash set-all.sh
+
+git  clone https://github.com/takshal/freq
+cd freq
+chmod +x *
+sudo go build main.go
+sudo mv main /usr/local/bin/freq
+cd ..
+
+pip install fuzzywuzzy
+pip install requests
+pip install tld
+
+git clone https://github.com/s0md3v/XSStrike.git
+cd XSStrike
+chmod +x *
+cd ..
+
+
+#sqli
+git clone https://github.com/r0oth3x49/ghauri.git
+cd ghauri
+pip install  -r requirements.txt
+chmod +x *
+python3 setup.py install
+cd ..
+
+#ssrf
+go install github.com/assetnote/surf/cmd/surf@latest
+sudo cp -r ~/go/bin/surf  /usr/local/bin/ 
+
+
+#subdomaintakover
+wget https://github.com/Stratus-Security/Subdominator/releases/latest/download/Subdominator
+sudo chmod +x Subdominator
+sudo mv Subdominator /usr/local/bin/subdominator
+
+#Origin IP Disclosure
+git clone https://github.com/christophetd/CloudFlair.git
+cd CloudFlair
+xterm -e pip install -r requirements.txt
+chmod +x *
+cd ..
+
+git clone https://github.com/m4ll0k/SecretFinder.git secretfinder
+cd secretfinder
+chmod +x *
+xterm -e pip install -r requirements.txt
+cd ..
+
+#dora
+git clone https://github.com/sdushantha/dora.git
+cd dora
+chmod +x *
+pip   install -r  requirements.txt
+sudo pip install setuptools
+sudo python3 setup.py install
+cd ..
+
+wget https://github.com/joanbono/gap/releases/download/v3.0.0/GAP_v3.0.0_linux_amd64.tar.gz
+chmod +x *.tar.gz
+tar -xvf *.gz 
+rm *.tar.gz
+chmod +x *
+sudo mv gap_v3.0.0_linux_amd64 /usr/local/bin/gap
+
+
+
+
+#github-recon
+curl -sSfL https://raw.githubusercontent.com/trufflesecurity/trufflehog/main/scripts/install.sh | sudo sh -s -- -b /usr/local/bin
+
+
+#js-enum
+go install -v github.com/lc/subjs@latest
+go install github.com/MrEmpy/mantra@latest
+go install github.com/i5nipe/nipejs@latest
+sudo cp -r ~/go/bin/*  /usr/local/bin/    
+
+
+git clone https://github.com/blechschmidt/massdns.git ~/tools/massdns 
+cd ~/tools/massdns
+sudo make
+sudo make install 
+cd ..
+
+#cors
+git clone  https://github.com/s0md3v/Corsy.git
+cd Corsy
+chmod +x *
+xterm -e pip install -r requirements.txt
+pip install requests
+cd ..
+
+#smugller
+
+git clone https://github.com/anshumanpattnaik/http-request-smuggling.git
+cd http-request-smuggling
+chmod +x *
+pip3 install -r requirements.txt
+cd ..
+
+
+
+
+#open-redirect
+git clone https://github.com/devanshbatham/openredirex
+cd openredirex
+chmod +x *
+./setup.sh
+xterm -e pip install tqdm
+cd ..
+
+#pip-tools
+pip install lolcat  wget 
+
+xterm -e pip install arjun  
+xterm -e pip install uro
+
+xterm -e pip install dirsearch 
+xterm -e pip install sqlmap
+pip install git+https://github.com/xnl-h4ck3r/waymore.git -v
+
+xterm -e pip install git+https://github.com/sanjai-AK47/ShodanX
+xterm -e pip install appdirs
+xterm -e pip install alive_progress
+
+
+#go-tools
+
+
+echo -e "\033[36m[+]Installing... Go-Tools  \033[m";
+go install -v github.com/projectdiscovery/notify/cmd/notify@latest
+go install -v github.com/owasp-amass/amass/v4/...@master
+go install -v github.com/projectdiscovery/subfinder/v2/cmd/subfinder@latest
+go install -v github.com/tomnomnom/assetfinder@latest
+go install github.com/hakluke/haklistgen@latest
+go install -v github.com/projectdiscovery/shuffledns/cmd/shuffledns@latest
+go install -v github.com/tomnomnom/gf@latest
+go install github.com/dwisiswant0/gfx@latest
+go install -v github.com/tomnomnom/anew@latest
+go install -v github.com/tomnomnom/qsreplace@latest
+go install github.com/tomnomnom/unfurl@latest
+go install -v github.com/projectdiscovery/httpx/cmd/httpx@latest
+go install github.com/hakluke/hakrawler@latest
+go install github.com/tomnomnom/waybackurls@latest
+go install github.com/projectdiscovery/katana/cmd/katana@latest
+go install github.com/lc/gau/v2/cmd/gau@latest
+go install github.com/ffuf/ffuf/v2@latest
+go install -v github.com/projectdiscovery/naabu/v2/cmd/naabu@latest
+go install -v github.com/LukaSikic/subzy@latest
+go install -v github.com/lc/subjs@latest
+go install -v github.com/projectdiscovery/nuclei/v3/cmd/nuclei@latest
+go install -v github.com/projectdiscovery/dnsx/cmd/dnsx@latest
+go install github.com/KathanP19/Gxss@latest
+go install -v github.com/haccer/subjack@latest
+
+go install -v github.com/ethicalhackingplayground/bxss@latest
+go install github.com/hahwul/dalfox/v2@latest
+go install -v github.com/xm1k3/cent@latest
+
+#copy-path-to-bin
+sudo cp -r ~/go/bin/*  /usr/local/bin/ 
+sudo cp -r ~/go/bin/cent  /usr/local/bin/ 
+
+echo -e ${GREEN}"[+]Done! Go Tools installed."; echo "";
+sleep 1.5
+
+curl -LO https://raw.githubusercontent.com/lc/gau/master/.gau.toml
+mv .gau.toml ~/.gau.toml
+
+#
+cent init
+echo -e "\033[33m[+]Installing nuclei templates \033[m"
+cent -p ~/cent-nuclei-templates
+nuclei -update-templates 
+
+
+echo  -e "\033[32m_________________________________\033[m"
+echo -e "\033[33m[+]Installaltion Done! \033[m"
+
+
+}
+tools
+
+curl -L https://raw.githubusercontent.com/ven0m90/wordinstall.sh/main/wordinstall.sh -o wordinstall.sh;chmod +x wordinstall.sh;bash wordinstall.sh 
+rm wordinstall.sh 

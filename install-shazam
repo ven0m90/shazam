@@ -304,11 +304,9 @@ go install -v github.com/haccer/subjack@latest
 
 go install -v github.com/ethicalhackingplayground/bxss@latest
 go install github.com/hahwul/dalfox/v2@latest
-go install -v github.com/xm1k3/cent@latest
 
 #copy-path-to-bin
 sudo cp -r ~/go/bin/*  /usr/local/bin/ 
-sudo cp -r ~/go/bin/cent  /usr/local/bin/ 
 
 echo -e ${GREEN}"[+]Done! Go Tools installed."; echo "";
 sleep 1.5
@@ -317,13 +315,6 @@ curl -LO https://raw.githubusercontent.com/lc/gau/master/.gau.toml
 mv .gau.toml ~/.gau.toml
 
 #
-cent init
-echo -e "\033[33m[+]Installing nuclei templates \033[m"
-git clone https://github.com/0xKayala/fuzzing-templates.git ~/fuzzing-templates
-
-cent -p ~/cent-nuclei-templates
-nuclei -update-templates 
-
 
 echo  -e "\033[32m_________________________________\033[m"
 echo -e "\033[33m[+]Installaltion Done! \033[m"
@@ -334,3 +325,16 @@ tools
 
 curl -L https://raw.githubusercontent.com/ven0m90/wordinstall.sh/main/wordinstall.sh -o wordinstall.sh;chmod +x wordinstall.sh;bash wordinstall.sh 
 rm wordinstall.sh 
+
+cd ~
+echo -e "\033[33m[+]Installing nuclei templates \033[m"
+git clone https://github.com/emadshanab/Nuclei-Templates-Collection
+cd  Nuclei-Templates-Collection
+chmod +x *
+python3 bulk_clone_repos.py 
+python3  remove_duplicated_templates.py 
+find . -type f \( -iname "*.yaml" -o -iname "*.yml" \)| sort > sorted_yaml_files.txt
+
+cd ~
+
+

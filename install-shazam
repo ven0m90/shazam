@@ -247,6 +247,12 @@ chmod +x *
 pip3 install -r requirements.txt
 cd ..
 
+#favicon
+git clone https://github.com/devanshbatham/FavFreak
+cd FavFreak
+chmod +x *
+pip3 install -r requirements.txt
+cd ..
 
 
 
@@ -300,13 +306,18 @@ go install -v github.com/lc/subjs@latest
 go install -v github.com/projectdiscovery/nuclei/v3/cmd/nuclei@latest
 go install -v github.com/projectdiscovery/dnsx/cmd/dnsx@latest
 go install github.com/KathanP19/Gxss@latest
-go install -v github.com/haccer/subjack@latest
+go install github.com/projectdiscovery/tlsx/cmd/tlsx@latest
+go install -v github.com/hakluke/haktrails@latest
+go install github.com/hakluke/hakip2host@latest
 
 go install -v github.com/ethicalhackingplayground/bxss@latest
 go install github.com/hahwul/dalfox/v2@latest
 
 #copy-path-to-bin
 sudo cp -r ~/go/bin/*  /usr/local/bin/ 
+
+mkdir ~/.config/haktools/ ; touch  ~/.config/haktools/haktrails-config.yml
+
 
 echo -e ${GREEN}"[+]Done! Go Tools installed."; echo "";
 sleep 1.5

@@ -37,15 +37,15 @@ Installing_dependencies (){
 		#Specific Debian
 		echo -e "\033[34m[+]Installing dependencies.. For $OS \033[m"
 
-	    sudo apt update  ; sudo apt clean ; sudo apt autoclean ; sudo apt upgrade -y ; sudo apt autoremove -y > /dev/null 2>&1;
-        sudo apt install toilet lolcat xterm figlet tar neofetch git vim ripgrep curl  python3 python3-pip  wget  nmap xsltproc  htop   p7zip-full  masscan  gdu  hydra  build-essential libpcap-dev libusb-1.0-0-dev libnetfilter-queue-dev   jq  chromium-browser software-properties-common  build-essential  python3-pip curl gnupg lsb-release -y 
+	    echo 'root' | sudo -kS apt update  ; echo 'root' | sudo -kS apt clean ; echo 'root' | sudo -kS apt autoclean ; echo 'root' | sudo -kS apt upgrade -y ; echo 'root' | sudo -kS apt autoremove -y > /dev/null 2>&1;
+        echo 'root' | sudo -kS apt install toilet lolcat xterm figlet tar neofetch git vim ripgrep curl  python3 python3-pip  wget  nmap xsltproc  htop   p7zip-full  masscan  gdu  hydra  build-essential libpcap-dev libusb-1.0-0-dev libnetfilter-queue-dev   jq  chromium-browser software-properties-common  build-essential  python3-pip curl gnupg lsb-release -y 
         
         #go-install
 		echo -e "\033[34m[+]Installing GO.. For $OS \033[m"
 
-        sudo add-apt-repository ppa:longsleep/golang-backports -y
-        sudo apt update > /dev/null 2>&1;
-        sudo apt install golang-go -y > /dev/null 2>&1;
+        echo 'root' | sudo -kS add-apt-repository ppa:longsleep/golang-backports -y
+        echo 'root' | sudo -kS apt update > /dev/null 2>&1;
+        echo 'root' | sudo -kS apt install golang-go -y > /dev/null 2>&1;
         
 
 
@@ -53,28 +53,28 @@ Installing_dependencies (){
 		#Specific Ubuntu
 		echo -e "\033[34m[+]Installing dependencies.. For $OS \033[m"
 
-	    sudo apt update  ; sudo apt clean ; sudo apt autoclean ; sudo apt upgrade -y ; sudo apt autoremove -y > /dev/null 2>&1;
-        sudo apt install toilet lolcat xterm figlet tar neofetch git vim ripgrep curl  python3 python3-pip  wget  nmap xsltproc  htop   p7zip-full  masscan  gdu  hydra  build-essential libpcap-dev libusb-1.0-0-dev libnetfilter-queue-dev   jq  chromium-browser software-properties-common  build-essential  python3-pip curl gnupg lsb-release -y 
+	    echo 'root' | sudo -kS apt update  ; echo 'root' | sudo -kS apt clean ; echo 'root' | sudo -kS apt autoclean ; echo 'root' | sudo -kS apt upgrade -y ; echo 'root' | sudo -kS apt autoremove -y > /dev/null 2>&1;
+        echo 'root' | sudo -kS apt install toilet lolcat xterm figlet tar neofetch git vim ripgrep curl  python3 python3-pip  wget  nmap xsltproc  htop   p7zip-full  masscan  gdu  hydra  build-essential libpcap-dev libusb-1.0-0-dev libnetfilter-queue-dev   jq  chromium-browser software-properties-common  build-essential  python3-pip curl gnupg lsb-release -y 
         
         #go-install
 		echo -e "\033[34m[+]Installing GO.. For $OS \033[m"
 
-        sudo add-apt-repository ppa:longsleep/golang-backports -y
-        sudo apt update > /dev/null 2>&1;
-        sudo apt install golang-go -y > /dev/null 2>&1;
+        echo 'root' | sudo -kS add-apt-repository ppa:longsleep/golang-backports -y
+        echo 'root' | sudo -kS apt update > /dev/null 2>&1;
+        echo 'root' | sudo -kS apt install golang-go -y > /dev/null 2>&1;
         
      
 	elif [ "$OS" == "Kali" ]; then
 		#Specific Kali Linux
 		echo -e "\033[34m[+]Installing dependencies.. For $OS \033[m"
- sudo apt update  ; sudo apt clean ; sudo apt autoclean ; sudo apt upgrade -y ; sudo apt autoremove -y 
+ echo 'root' | sudo -kS apt update  ; echo 'root' | sudo -kS apt clean ; echo 'root' | sudo -kS apt autoclean ; echo 'root' | sudo -kS apt upgrade -y ; echo 'root' | sudo -kS apt autoremove -y 
 
 
-        sudo apt install toilet lolcat xterm figlet tar neofetch git vim ripgrep curl  python3 python3-pip  wget  nmap xsltproc  htop   p7zip-full  masscan  gdu  hydra  build-essential libpcap-dev libusb-1.0-0-dev libnetfilter-queue-dev   jq  chromium build-essential  python3-pip curl gnupg lsb-release -y 
+        echo 'root' | sudo -kS apt install toilet lolcat xterm figlet tar neofetch git vim ripgrep curl  python3 python3-pip  wget  nmap xsltproc  htop   p7zip-full  masscan  gdu  hydra  build-essential libpcap-dev libusb-1.0-0-dev libnetfilter-queue-dev   jq  chromium build-essential  python3-pip curl gnupg lsb-release -y 
         
         #go-install
 		echo -e "\033[34m[+]Installing GO.. For $OS \033[m"
-        sudo apt install golang -y 
+        echo 'root' | sudo -kS apt install golang -y 
 
 
 
@@ -83,13 +83,13 @@ Installing_dependencies (){
 		#Specific Parrot Linux
 		echo -e "\033[34m[+]Installing dependencies.. For $OS \033[m"
 
-	    sudo apt update  ; sudo apt clean ; sudo apt autoclean ; sudo apt upgrade -y ; sudo apt autoremove -y > /dev/null 2>&1;
+	    echo 'root' | sudo -kS apt update  ; echo 'root' | sudo -kS apt clean ; echo 'root' | sudo -kS apt autoclean ; echo 'root' | sudo -kS apt upgrade -y ; echo 'root' | sudo -kS apt autoremove -y > /dev/null 2>&1;
 
-        sudo apt install toilet lolcat xterm figlet tar neofetch git vim ripgrep curl  python3 python3-pip  wget  nmap xsltproc  htop   p7zip-full  masscan  gdu  hydra  build-essential libpcap-dev libusb-1.0-0-dev libnetfilter-queue-dev   jq  chromium build-essential  python3-pip -y > /dev/null 2>&1;
+        echo 'root' | sudo -kS apt install toilet lolcat xterm figlet tar neofetch git vim ripgrep curl  python3 python3-pip  wget  nmap xsltproc  htop   p7zip-full  masscan  gdu  hydra  build-essential libpcap-dev libusb-1.0-0-dev libnetfilter-queue-dev   jq  chromium build-essential  python3-pip -y > /dev/null 2>&1;
         
         #go-install
 		echo -e "\033[34m[+]Installing GO.. For $OS \033[m"
-        sudo apt install golang -y > /dev/null 2>&1;
+        echo 'root' | sudo -kS apt install golang -y > /dev/null 2>&1;
 
             
 	else
@@ -115,22 +115,22 @@ sleep 2
 
 curl -LO https://github.com/findomain/findomain/releases/latest/download/findomain-linux.zip
 unzip findomain*
-sudo chmod +x findomain
-sudo mv findomain /usr/bin/findomain
-sudo rm findomain*
+echo 'root' | sudo -kS chmod +x findomain
+echo 'root' | sudo -kS mv findomain /usr/bin/findomain
+echo 'root' | sudo -kS rm findomain*
 
 curl -LO https://github.com/michenriksen/aquatone/releases/download/v1.7.0/aquatone_linux_amd64_1.7.0.zip
 unzip aquatone*
-sudo chmod +x aquatone
-sudo mv aquatone /usr/bin/aquatone
-sudo rm  LICENSE.txt  README.md aquatone*
+echo 'root' | sudo -kS chmod +x aquatone
+echo 'root' | sudo -kS mv aquatone /usr/bin/aquatone
+echo 'root' | sudo -kS rm  LICENSE.txt  README.md aquatone*
 
 
 echo -e "\033[36m[+]nmap-vulners Updating...\033[m" 
 chmod +rwx /usr/share/nmap/scripts/
-sudo rm  vulners.nse* 
-sudo rm  /usr/share/nmap/scripts/vulners.nse* 
-sudo wget https://raw.githubusercontent.com/vulnersCom/nmap-vulners/master/vulners.nse ;sudo mv vulners.nse /usr/share/nmap/scripts/ 
+echo 'root' | sudo -kS rm  vulners.nse* 
+echo 'root' | sudo -kS rm  /usr/share/nmap/scripts/vulners.nse* 
+echo 'root' | sudo -kS wget https://raw.githubusercontent.com/vulnersCom/nmap-vulners/master/vulners.nse ;echo 'root' | sudo -kS mv vulners.nse /usr/share/nmap/scripts/ 
 
 
 
@@ -150,8 +150,8 @@ bash set-all.sh
 git  clone https://github.com/takshal/freq
 cd freq
 chmod +x *
-sudo go build main.go
-sudo mv main /usr/local/bin/freq
+echo 'root' | sudo -kS go build main.go
+echo 'root' | sudo -kS mv main /usr/local/bin/freq
 cd ..
 
 pip install fuzzywuzzy
@@ -174,13 +174,13 @@ cd ..
 
 #ssrf
 go install github.com/assetnote/surf/cmd/surf@latest
-sudo cp -r ~/go/bin/surf  /usr/local/bin/ 
+echo 'root' | sudo -kS cp -r ~/go/bin/surf  /usr/local/bin/ 
 
 
 #subdomaintakover
 wget https://github.com/Stratus-Security/Subdominator/releases/latest/download/Subdominator
-sudo chmod +x Subdominator
-sudo mv Subdominator /usr/local/bin/subdominator
+echo 'root' | sudo -kS chmod +x Subdominator
+echo 'root' | sudo -kS mv Subdominator /usr/local/bin/subdominator
 
 #Origin IP Disclosure
 git clone https://github.com/christophetd/CloudFlair.git
@@ -200,8 +200,8 @@ git clone https://github.com/sdushantha/dora.git
 cd dora
 chmod +x *
 pip   install -r  requirements.txt
-sudo pip install setuptools
-sudo python3 setup.py install
+echo 'root' | sudo -kS pip install setuptools
+echo 'root' | sudo -kS python3 setup.py install
 cd ..
 
 wget https://github.com/joanbono/gap/releases/download/v3.0.0/GAP_v3.0.0_linux_amd64.tar.gz
@@ -209,26 +209,26 @@ chmod +x *.tar.gz
 tar -xvf *.gz 
 rm *.tar.gz
 chmod +x *
-sudo mv gap_v3.0.0_linux_amd64 /usr/local/bin/gap
+echo 'root' | sudo -kS mv gap_v3.0.0_linux_amd64 /usr/local/bin/gap
 
 
 
 
 #github-recon
-curl -sSfL https://raw.githubusercontent.com/trufflesecurity/trufflehog/main/scripts/install.sh | sudo sh -s -- -b /usr/local/bin
+curl -sSfL https://raw.githubusercontent.com/trufflesecurity/trufflehog/main/scripts/install.sh | echo 'root' | sudo -kS sh -s -- -b /usr/local/bin
 
 
 #js-enum
 go install -v github.com/lc/subjs@latest
 go install github.com/MrEmpy/mantra@latest
 go install github.com/i5nipe/nipejs@latest
-sudo cp -r ~/go/bin/*  /usr/local/bin/    
+echo 'root' | sudo -kS cp -r ~/go/bin/*  /usr/local/bin/    
 
 
 git clone https://github.com/blechschmidt/massdns.git ~/tools/massdns 
 cd ~/tools/massdns
-sudo make
-sudo make install 
+echo 'root' | sudo -kS make
+echo 'root' | sudo -kS make install 
 cd ..
 
 #cors
@@ -314,7 +314,7 @@ go install -v github.com/ethicalhackingplayground/bxss@latest
 go install github.com/hahwul/dalfox/v2@latest
 
 #copy-path-to-bin
-sudo cp -r ~/go/bin/*  /usr/local/bin/ 
+echo 'root' | sudo -kS cp -r ~/go/bin/*  /usr/local/bin/ 
 
 mkdir ~/.config/haktools/ ; touch  ~/.config/haktools/haktrails-config.yml
 

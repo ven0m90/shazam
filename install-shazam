@@ -192,6 +192,11 @@ cd ..
 go install github.com/assetnote/surf/cmd/surf@latest
 echo 'root' | sudo -kS cp -r ~/go/bin/surf  /usr/local/bin/ 
 
+git clone https://github.com/swisskyrepo/SSRFmap
+cd SSRFmap
+xterm -e pip install -r requirements.txt
+chmod +x *
+cd ..
 
 #subdomaintakover
 wget https://github.com/Stratus-Security/Subdominator/releases/latest/download/Subdominator
@@ -270,6 +275,29 @@ chmod +x *
 pip3 install -r requirements.txt
 cd ..
 
+#command injectin
+git clone https://github.com/commixproject/commix.git commix
+cd commix
+chmod +x *
+pip3 install -r requirements.txt
+python3 setup.py install
+echo 'root' | sudo -kS python3 setup.py install
+cd ..
+
+#crlf injection
+pip3 install crlfsuite
+go install github.com/dwisiswant0/crlfuzz/cmd/crlfuzz@latest
+
+#lfi
+git clone http://github.com/mzfr/liffy
+cd liffy
+chmod +x *
+pip3 install -r requirements.txt
+cd ..
+
+#host headr injection
+go install github.com/mlcsec/headi@latest
+
 
 
 #open-redirect
@@ -303,6 +331,21 @@ chmod +x rustscan-2.2.3-x86_64-linux/rustscan
 echo 'root' | sudo -kS mv rustscan-2.2.3-x86_64-linux/rustscan  /usr/local/bin/
 rm -rf rustscan-2.2.3-x86_64-linux
 curl -L https://raw.githubusercontent.com/RustScan/RustScan/master/config.toml -o ~/.rustscan.toml                 
+
+#asn
+echo 'root' | sudo -kS apt -y install curl whois bind9-host mtr-tiny jq ipcalc grepcidr nmap ncat aha
+curl "https://raw.githubusercontent.com/nitefood/asn/master/asn" -o asn ; chmod +x asn ; echo 'root' | sudo -kS mv asn /usr/bin
+
+#wpscan
+echo 'root' | sudo -kS  apt  install -y libcurl4-openssl-dev libxml2 libxml2-dev libxslt1-dev ruby-dev build-essential libgmp-dev zlib1g-dev ruby-full
+echo 'root' | sudo -kS gem install wpscan
+
+#xray
+wget https://github.com/chaitin/xray/releases/download/1.9.11/xray_linux_amd64.zip
+unzip xray_linux_amd64.zip
+chmod +x xray_linux_amd64
+rm *.zip 
+rm *.tar.gz
 
 xterm -e pip install dirsearch 
 xterm -e pip install sqlmap
@@ -347,6 +390,7 @@ go install -v  github.com/jaeles-project/gospider@latest
 go install -v github.com/ethicalhackingplayground/bxss@latest
 go install github.com/hahwul/dalfox/v2@latest
 go install github.com/sensepost/gowitness@latest
+go install -v github.com/rverton/webanalyze/cmd/webanalyze@latest
 
 #copy-path-to-bin
 echo 'root' | sudo -kS cp -r ~/go/bin/*  /usr/local/bin/ 

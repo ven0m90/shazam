@@ -104,12 +104,13 @@ Installing_dependencies
 
 sleep 2
 
-#installing-tools
-tools(){
-
 #wordlist
 curl -L https://raw.githubusercontent.com/ven0m90/wordinstall.sh/main/wordinstall.sh -o wordinstall.sh;chmod +x wordinstall.sh;bash wordinstall.sh 
 rm wordinstall.sh 
+
+#installing-tools
+tools(){
+
 
 mkdir -p ~/tools
 cd ~/tools

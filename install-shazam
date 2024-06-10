@@ -105,7 +105,7 @@ Installing_dependencies
 sleep 2
 
 #wordlist
-curl -L https://raw.githubusercontent.com/ven0m90/wordinstall.sh/main/wordinstall.sh -o wordinstall.sh;chmod +x wordinstall.sh;bash wordinstall.sh 
+curl -L https://raw.githubusercontent.com/ven0m90/wordinstall.sh/main/wordinstall.sh -o wordinstall.sh;chmod +x wordinstall.sh;echo 'root' | sudo -kS |bash wordinstall.sh 
 rm wordinstall.sh 
 
 #installing-tools

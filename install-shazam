@@ -150,8 +150,11 @@ echo 'root' | sudo -kS rm  LICENSE.txt  README.md aquatone*
 echo -e "\033[36m[+]nmap-vulners Updating...\033[m" 
 chmod +rwx /usr/share/nmap/scripts/
 echo 'root' | sudo -kS rm  vulners.nse* 
-echo 'root' | sudo -kS rm  /usr/share/nmap/scripts/vulners.nse* 
+echo 'root' | sudo -kS rm  /usr/share/nmap/scripts/vulners.nse*
+echo 'root' | sudo -kS rm http-vulners-regex.nse
+echo 'root' | sudo -kS rm  /usr/share/nmap/scripts/http-vulners-regex.nse
 echo 'root' | sudo -kS wget https://raw.githubusercontent.com/vulnersCom/nmap-vulners/master/vulners.nse ;echo 'root' | sudo -kS mv vulners.nse /usr/share/nmap/scripts/ 
+echo 'root' | sudo  -kS nmap --script-updatedb
 
 
 

@@ -208,7 +208,7 @@ go install github.com/mlcsec/headi@latest
 git clone https://github.com/devanshbatham/openredirex
 cd openredirex
 chmod +x *
-echo 'root' | sudo -kS|./setup.sh
+echo 'root' | sudo -kS bash setup.sh
 pip install tqdm
 cd ..
 

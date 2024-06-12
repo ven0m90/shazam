@@ -1,103 +1,14 @@
 #!/bin/bash
 #tools-install
-# ----------------------------------
-# Colors
-# ----------------------------------
-NOCOLOR='\033[0m'             # No Color
-RED='\033[0;31m'
-GREEN='\033[0;32m'
-ORANGE='\033[0;33m'
-BLUE='\033[0;34m'
-PURPLE='\033[0;35m'
-CYAN='\033[0;36m'
-LIGHTGRAY='\033[0;37m'
-DARKGRAY='\033[1;30m'
-LIGHTRED='\033[1;31m'
-LIGHTGREEN='\033[1;32m'
-YELLOW='\033[1;33m'
-LIGHTBLUE='\033[1;34m'
-LIGHTPURPLE='\033[1;35m'
-LIGHTCYAN='\033[1;36m'
-WHITE='\033[1;37m'
-CG='\033[1;38;5;087m'
-CP='\033[1;38;5;221m'
-CPO='\033[1;38;5;205m'
-CN='\033[1;38;5;247m'
-CNC='\033[1;38;5;051m'
-
-
 
 Installing_dependencies (){
 #Check Operating System
+echo 'root' | sudo -kS apt update  ; echo 'root' | sudo -kS apt clean ; echo 'root' | sudo -kS apt autoclean ; echo 'root' | sudo -kS apt upgrade -y ; echo 'root' | sudo -kS apt autoremove -y 
+echo 'root' | sudo -kS apt install toilet lolcat  figlet tar neofetch git vim ripgrep curl  python3 python3-pip  wget  nmap xsltproc  htop   p7zip-full  masscan  gdu  hydra  build-essential libpcap-dev libusb-1.0-0-dev libnetfilter-queue-dev   jq    gnupg lsb-release -y 
 
-    echo -e ${YELLOW}"[+]Checking For Operating System\n"
-	#Check Operating System
-	OS=$(lsb_release -i 2> /dev/null | sed 's/:\t/:/' | cut -d ':' -f 2-)
-	if [ "$OS" == "Debian" ] || [ "$OS" == "Linuxmint" ]; then
-		#Specific Debian
-		echo -e "\033[34m[+]Installing dependencies.. For $OS \033[m"
-
-	    echo 'root' | sudo -kS apt update  ; echo 'root' | sudo -kS apt clean ; echo 'root' | sudo -kS apt autoclean ; echo 'root' | sudo -kS apt upgrade -y ; echo 'root' | sudo -kS apt autoremove -y > /dev/null 2>&1;
-        echo 'root' | sudo -kS apt install toilet lolcat xterm figlet tar neofetch git vim ripgrep curl  python3 python3-pip  wget  nmap xsltproc  htop   p7zip-full  masscan  gdu  hydra  build-essential libpcap-dev libusb-1.0-0-dev libnetfilter-queue-dev   jq  chromium-browser software-properties-common  build-essential  python3-pip curl gnupg lsb-release -y 
-        
-        #go-install
-		echo -e "\033[34m[+]Installing GO.. For $OS \033[m"
-
-        echo 'root' | sudo -kS add-apt-repository ppa:longsleep/golang-backports -y
-        echo 'root' | sudo -kS apt update > /dev/null 2>&1;
-        echo 'root' | sudo -kS apt install golang-go -y > /dev/null 2>&1;
-        
-
-
-	elif [ "$OS" == "Ubuntu" ]; then
-		#Specific Ubuntu
-		echo -e "\033[34m[+]Installing dependencies.. For $OS \033[m"
-
-	    echo 'root' | sudo -kS apt update  ; echo 'root' | sudo -kS apt clean ; echo 'root' | sudo -kS apt autoclean ; echo 'root' | sudo -kS apt upgrade -y ; echo 'root' | sudo -kS apt autoremove -y > /dev/null 2>&1;
-        echo 'root' | sudo -kS apt install toilet lolcat xterm figlet tar neofetch git vim ripgrep curl  python3 python3-pip  wget  nmap xsltproc  htop   p7zip-full  masscan  gdu  hydra  build-essential libpcap-dev libusb-1.0-0-dev libnetfilter-queue-dev   jq  chromium-browser software-properties-common  build-essential  python3-pip curl gnupg lsb-release -y 
-        
-        #go-install
-		echo -e "\033[34m[+]Installing GO.. For $OS \033[m"
-
-        echo 'root' | sudo -kS add-apt-repository ppa:longsleep/golang-backports -y
-        echo 'root' | sudo -kS apt update > /dev/null 2>&1;
-        echo 'root' | sudo -kS apt install golang-go -y > /dev/null 2>&1;
-        
-     
-	elif [ "$OS" == "Kali" ]; then
-		#Specific Kali Linux
-		echo -e "\033[34m[+]Installing dependencies.. For $OS \033[m"
- echo 'root' | sudo -kS apt update  ; echo 'root' | sudo -kS apt clean ; echo 'root' | sudo -kS apt autoclean ; echo 'root' | sudo -kS apt upgrade -y ; echo 'root' | sudo -kS apt autoremove -y 
-
-
-        echo 'root' | sudo -kS apt install toilet lolcat xterm figlet tar neofetch git vim ripgrep curl  python3 python3-pip  wget  nmap xsltproc  htop   p7zip-full  masscan  gdu  hydra  build-essential libpcap-dev libusb-1.0-0-dev libnetfilter-queue-dev   jq  chromium build-essential  python3-pip curl gnupg lsb-release -y 
-        
-        #go-install
-		echo -e "\033[34m[+]Installing GO.. For $OS \033[m"
-        echo 'root' | sudo -kS apt install golang -y 
-
-
-
-
-	elif [ "$OS" == "Parrot" ]; then
-		#Specific Parrot Linux
-		echo -e "\033[34m[+]Installing dependencies.. For $OS \033[m"
-
-	    echo 'root' | sudo -kS apt update  ; echo 'root' | sudo -kS apt clean ; echo 'root' | sudo -kS apt autoclean ; echo 'root' | sudo -kS apt upgrade -y ; echo 'root' | sudo -kS apt autoremove -y > /dev/null 2>&1;
-
-        echo 'root' | sudo -kS apt install toilet lolcat xterm figlet tar neofetch git vim ripgrep curl  python3 python3-pip  wget  nmap xsltproc  htop   p7zip-full  masscan  gdu  hydra  build-essential libpcap-dev libusb-1.0-0-dev libnetfilter-queue-dev   jq  chromium build-essential  python3-pip -y > /dev/null 2>&1;
-        
-        #go-install
-		echo -e "\033[34m[+]Installing GO.. For $OS \033[m"
-        echo 'root' | sudo -kS apt install golang -y > /dev/null 2>&1;
-
-            
-	else
-        	echo -e ${RED}"[+]OS unrecognized. Please check the compatibility with your system.";
-        	echo -e ${RED}"[+]End of the script";
-        exit;
-	fi
-
+#go-install
+echo -e "\033[34m[+]Installing GO.. For $OS \033[m"
+echo 'root' | sudo -kS apt install golang -y 
 
 }
 Installing_dependencies
@@ -117,22 +28,6 @@ cd ~/tools
 
 echo -e "\033[33m[+]Installing...Tools \033[m";
 sleep 2
-
-#python2
-wget https://www.python.org/ftp/python/2.7.9/Python-2.7.9.tgz
-tar xzf Python-2.7.9.tgz
-cd Python-2.7.9
-chmod +x *
-./configure --enable-optimizations
-echo 'root' | sudo -kS ./configure --enable-optimizations
-echo 'root' | sudo -kS make altinstall
-alias python2=/usr/local/bin/python2.7
-
-curl https://bootstrap.pypa.io/pip/2.7/get-pip.py --output get-pip.py
-chmod +x get-pip.py
-python2 get-pip.py
-cd ..
-
 
 curl -LO https://github.com/findomain/findomain/releases/latest/download/findomain-linux.zip
 unzip findomain*
@@ -162,7 +57,7 @@ echo 'root' | sudo  -kS nmap --script-updatedb
 git clone https://github.com/devanshbatham/paramspider
 cd paramspider
 chmod +x *
-xterm -e pip install .
+pip install .
 cd ..
 
 
@@ -202,7 +97,7 @@ echo 'root' | sudo -kS cp -r ~/go/bin/surf  /usr/local/bin/
 
 git clone https://github.com/swisskyrepo/SSRFmap
 cd SSRFmap
-xterm -e pip install -r requirements.txt
+pip install -r requirements.txt
 chmod +x *
 cd ..
 
@@ -214,14 +109,14 @@ echo 'root' | sudo -kS mv Subdominator /usr/local/bin/subdominator
 #Origin IP Disclosure
 git clone https://github.com/christophetd/CloudFlair.git
 cd CloudFlair
-xterm -e pip install -r requirements.txt
+pip install -r requirements.txt
 chmod +x *
 cd ..
 
 git clone https://github.com/m4ll0k/SecretFinder.git secretfinder
 cd secretfinder
 chmod +x *
-xterm -e pip install -r requirements.txt
+pip install -r requirements.txt
 cd ..
 
 #dora
@@ -229,7 +124,7 @@ git clone https://github.com/sdushantha/dora.git
 cd dora
 chmod +x *
 pip   install -r  requirements.txt
-echo 'root' | sudo -kS pip install setuptools
+echo 'root' | sudo -kSpip install setuptools
 echo 'root' | sudo -kS python3 setup.py install
 cd ..
 
@@ -264,7 +159,7 @@ cd ..
 git clone  https://github.com/s0md3v/Corsy.git
 cd Corsy
 chmod +x *
-xterm -e pip install -r requirements.txt
+pip install -r requirements.txt
 pip install requests
 cd ..
 
@@ -313,7 +208,7 @@ git clone https://github.com/devanshbatham/openredirex
 cd openredirex
 chmod +x *
 echo 'root' | sudo -kS|./setup.sh
-xterm -e pip install tqdm
+pip install tqdm
 cd ..
 
 #pip-tools
@@ -325,8 +220,8 @@ gzip -dv x86_64-linux-x8.gz
 chmod +x  x86_64-linux-x8
 echo 'root' | sudo -kS mv x86_64-linux-x8 /usr/local/bin/x8
 
-xterm -e pip install arjun  
-xterm -e pip install uro
+pip install arjun  
+pip install uro
 
 #feroxbuster
 curl -sL https://raw.githubusercontent.com/epi052/feroxbuster/master/install-nix.sh | bash
@@ -355,13 +250,13 @@ chmod +x xray_linux_amd64
 rm *.zip 
 rm *.tar.gz
 
-xterm -e pip install dirsearch 
-xterm -e pip install sqlmap
+pip install dirsearch 
+pip install sqlmap
 pip install git+https://github.com/xnl-h4ck3r/waymore.git -v
 
-xterm -e pip install git+https://github.com/sanjai-AK47/ShodanX
-xterm -e pip install appdirs
-xterm -e pip install alive_progress
+pip install git+https://github.com/sanjai-AK47/ShodanX
+pip install appdirs
+pip install alive_progress
 
 
 #go-tools

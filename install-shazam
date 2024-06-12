@@ -2,9 +2,10 @@
 #tools-install
 
 Installing_dependencies (){
-#Check Operating System
+#kali linux
+
 echo 'root' | sudo -kS apt update  ; echo 'root' | sudo -kS apt clean ; echo 'root' | sudo -kS apt autoclean ; echo 'root' | sudo -kS apt upgrade -y ; echo 'root' | sudo -kS apt autoremove -y 
-echo 'root' | sudo -kS apt install toilet lolcat  figlet tar neofetch git vim ripgrep curl  python3 python3-pip  wget  nmap xsltproc  htop   p7zip-full  masscan  gdu  hydra  build-essential libpcap-dev libusb-1.0-0-dev libnetfilter-queue-dev   jq    gnupg lsb-release -y 
+echo 'root' | sudo -kS apt install toilet lolcat    figlet tar neofetch git vim ripgrep curl  python3 python3-pip  wget  nmap xsltproc  htop   p7zip-full  masscan  gdu  hydra  build-essential libpcap-dev libusb-1.0-0-dev libnetfilter-queue-dev   jq    gnupg lsb-release -y 
 
 #go-install
 echo -e "\033[34m[+]Installing GO.. For $OS \033[m"
@@ -319,11 +320,13 @@ tools
 
 cd ~
 echo -e "\033[33m[+]Installing nuclei templates \033[m"
-git clone https://github.com/emadshanab/Nuclei-Templates-Collection
-cd  Nuclei-Templates-Collection
-chmod +x *
-python3 bulk_clone_repos.py 
-python3  remove_duplicated_templates.py 
+git clone https://github.com/projectdiscovery/nuclei-templates.git ~/nuclei-templates
+git clone https://github.com/0xKayala/fuzzing-templates.git ~/fuzzing-templates
+export GITHUB_TEMPLATE_REPO=topscoder/nuclei-wordfence-cve
+nuclei -update-templates
+
+
+
 
 cd ~
 

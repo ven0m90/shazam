@@ -58,7 +58,7 @@ echo 'root' | sudo  -kS nmap --script-updatedb
 git clone https://github.com/devanshbatham/paramspider
 cd paramspider
 chmod +x *
-pip install .
+echo 'root' | sudo -kS pip install .
 cd ..
 
 
@@ -74,9 +74,9 @@ echo 'root' | sudo -kS go build main.go
 echo 'root' | sudo -kS mv main /usr/local/bin/freq
 cd ..
 
-pip install fuzzywuzzy
-pip install requests
-pip install tld
+echo 'root' | sudo -kS pip install fuzzywuzzy
+echo 'root' | sudo -kS pip install requests
+echo 'root' | sudo -kS pip install tld
 
 git clone https://github.com/s0md3v/XSStrike.git
 cd XSStrike
@@ -87,7 +87,7 @@ cd ..
 #sqli
 git clone https://github.com/r0oth3x49/ghauri.git
 cd ghauri
-pip install  -r requirements.txt
+echo 'root' | sudo -kS pip install  -r requirements.txt
 chmod +x *
 python3 setup.py install
 cd ..
@@ -98,7 +98,7 @@ echo 'root' | sudo -kS cp -r ~/go/bin/surf  /usr/local/bin/
 
 git clone https://github.com/swisskyrepo/SSRFmap
 cd SSRFmap
-pip install -r requirements.txt
+echo 'root' | sudo -kS pip install -r requirements.txt
 chmod +x *
 cd ..
 
@@ -110,14 +110,14 @@ echo 'root' | sudo -kS mv Subdominator /usr/local/bin/subdominator
 #Origin IP Disclosure
 git clone https://github.com/christophetd/CloudFlair.git
 cd CloudFlair
-pip install -r requirements.txt
+echo 'root' | sudo -kS pip install -r requirements.txt
 chmod +x *
 cd ..
 
 git clone https://github.com/m4ll0k/SecretFinder.git secretfinder
 cd secretfinder
 chmod +x *
-pip install -r requirements.txt
+echo 'root' | sudo -kS pip install -r requirements.txt
 cd ..
 
 #dora
@@ -125,7 +125,7 @@ git clone https://github.com/sdushantha/dora.git
 cd dora
 chmod +x *
 pip   install -r  requirements.txt
-echo 'root' | sudo -kSpip install setuptools
+echo 'root' | sudo -kSecho 'root' | sudo -kS pip install setuptools
 echo 'root' | sudo -kS python3 setup.py install
 cd ..
 
@@ -160,8 +160,8 @@ cd ..
 git clone  https://github.com/s0md3v/Corsy.git
 cd Corsy
 chmod +x *
-pip install -r requirements.txt
-pip install requests
+echo 'root' | sudo -kS pip install -r requirements.txt
+echo 'root' | sudo -kS pip install requests
 cd ..
 
 #smugller
@@ -169,34 +169,34 @@ cd ..
 git clone https://github.com/anshumanpattnaik/http-request-smuggling.git
 cd http-request-smuggling
 chmod +x *
-pip3 install -r requirements.txt
+echo 'root' | sudo -kS pip install -r requirements.txt
 cd ..
 
 #favicon
 git clone https://github.com/devanshbatham/FavFreak
 cd FavFreak
 chmod +x *
-pip3 install -r requirements.txt
+echo 'root' | sudo -kS pip install -r requirements.txt
 cd ..
 
 #command injectin
 git clone https://github.com/commixproject/commix.git commix
 cd commix
 chmod +x *
-pip3 install -r requirements.txt
+echo 'root' | sudo -kS pip install -r requirements.txt
 python3 setup.py install
 echo 'root' | sudo -kS python3 setup.py install
 cd ..
 
 #crlf injection
-pip3 install crlfsuite
+echo 'root' | sudo -kS pip install crlfsuite
 go install github.com/dwisiswant0/crlfuzz/cmd/crlfuzz@latest
 
 #lfi
 git clone http://github.com/mzfr/liffy
 cd liffy
 chmod +x *
-pip3 install -r requirements.txt
+echo 'root' | sudo -kS pip install -r requirements.txt
 cd ..
 
 #host headr injection
@@ -209,11 +209,11 @@ git clone https://github.com/devanshbatham/openredirex
 cd openredirex
 chmod +x *
 echo 'root' | sudo -kS bash setup.sh
-pip install tqdm
+echo 'root' | sudo -kS pip install tqdm
 cd ..
 
 #pip-tools
-pip install lolcat  wget 
+echo 'root' | sudo -kS pip install lolcat  wget 
 
 #x8
 wget https://github.com/Sh1Yo/x8/releases/download/v4.3.0/x86_64-linux-x8.gz
@@ -221,8 +221,8 @@ gzip -dv x86_64-linux-x8.gz
 chmod +x  x86_64-linux-x8
 echo 'root' | sudo -kS mv x86_64-linux-x8 /usr/local/bin/x8
 
-pip install arjun  
-pip install uro
+echo 'root' | sudo -kS pip install arjun  
+echo 'root' | sudo -kS pip install uro
 
 #feroxbuster
 curl -sL https://raw.githubusercontent.com/epi052/feroxbuster/master/install-nix.sh | bash
@@ -251,13 +251,13 @@ chmod +x xray_linux_amd64
 rm *.zip 
 rm *.tar.gz
 
-pip install dirsearch 
-pip install sqlmap
-pip install git+https://github.com/xnl-h4ck3r/waymore.git -v
+echo 'root' | sudo -kS pip install dirsearch 
+echo 'root' | sudo -kS pip install sqlmap
+echo 'root' | sudo -kS pip install git+https://github.com/xnl-h4ck3r/waymore.git -v
 
-pip install git+https://github.com/sanjai-AK47/ShodanX
-pip install appdirs
-pip install alive_progress
+echo 'root' | sudo -kS pip install git+https://github.com/sanjai-AK47/ShodanX
+echo 'root' | sudo -kS pip install appdirs
+echo 'root' | sudo -kS pip install alive_progress
 
 
 #go-tools
@@ -301,6 +301,9 @@ echo 'root' | sudo -kS cp -r ~/go/bin/*  /usr/local/bin/
 
 mkdir ~/.config/haktools/ ; touch  ~/.config/haktools/haktrails-config.yml
 
+git clone https://github.com/nil0x42/inscope
+echo 'root' | sudo -kS cp inscope/inscope /usr/local/bin 
+rm -rf inscope
 
 echo -e ${GREEN}"[+]Done! Go Tools installed."; echo "";
 sleep 1.5
@@ -322,8 +325,6 @@ cd ~
 echo -e "\033[33m[+]Installing nuclei templates \033[m"
 git clone https://github.com/projectdiscovery/nuclei-templates.git ~/nuclei-templates
 git clone https://github.com/0xKayala/fuzzing-templates.git ~/fuzzing-templates
-export GITHUB_TEMPLATE_REPO=topscoder/nuclei-wordfence-cve
-nuclei -update-templates
 
 
 

@@ -144,8 +144,6 @@ curl -sSfL https://raw.githubusercontent.com/trufflesecurity/trufflehog/main/scr
 
 
 #js-enum
-go install -v github.com/lc/subjs@latest
-go install github.com/MrEmpy/mantra@latest
 go install github.com/i5nipe/nipejs@latest
 echo 'root' | sudo -kS cp -r ~/go/bin/*  /usr/local/bin/    
 
@@ -288,7 +286,6 @@ go install -v github.com/projectdiscovery/dnsx/cmd/dnsx@latest
 go install github.com/KathanP19/Gxss@latest
 go install github.com/projectdiscovery/tlsx/cmd/tlsx@latest
 go install github.com/hakluke/hakip2host@latest
-go install -v github.com/hakluke/haktrails@latest
 go install -v github.com/x90skysn3k/brutespray@latest
 go install -v  github.com/jaeles-project/gospider@latest
 go install -v github.com/ethicalhackingplayground/bxss@latest
@@ -298,8 +295,6 @@ go install -v github.com/rverton/webanalyze/cmd/webanalyze@latest
 
 #copy-path-to-bin
 echo 'root' | sudo -kS cp -r ~/go/bin/*  /usr/local/bin/ 
-
-mkdir ~/.config/haktools/ ; touch  ~/.config/haktools/haktrails-config.yml
 
 git clone https://github.com/nil0x42/inscope
 echo 'root' | sudo -kS cp inscope/inscope /usr/local/bin 
@@ -325,7 +320,6 @@ cd ~
 echo -e "\033[33m[+]Installing nuclei templates \033[m"
 git clone https://github.com/projectdiscovery/nuclei-templates.git ~/nuclei-templates
 git clone https://github.com/0xKayala/fuzzing-templates.git ~/fuzzing-templates
-
 
 
 

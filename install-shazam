@@ -89,7 +89,7 @@ git clone https://github.com/r0oth3x49/ghauri.git
 cd ghauri
 echo 'root' | sudo -kS pip install  -r requirements.txt
 chmod +x *
-python3 setup.py install
+echo 'root' | sudo -ks python3 setup.py install
 cd ..
 
 #ssrf
@@ -184,7 +184,7 @@ git clone https://github.com/commixproject/commix.git commix
 cd commix
 chmod +x *
 echo 'root' | sudo -kS pip install -r requirements.txt
-python3 setup.py install
+echo 'root' | sudo -ks python3 setup.py install
 echo 'root' | sudo -kS python3 setup.py install
 cd ..
 

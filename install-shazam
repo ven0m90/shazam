@@ -112,13 +112,10 @@ cd ..
 wget https://github.com/Stratus-Security/Subdominator/releases/latest/download/Subdominator
 echo 'root' | sudo -kS chmod +x Subdominator
 echo 'root' | sudo -kS mv Subdominator /usr/local/bin/subdominator
+go install -v github.com/LukaSikic/subzy@latest
 
-#Origin IP Disclosure
-git clone https://github.com/christophetd/CloudFlair.git
-cd CloudFlair
-echo 'root' | sudo -kS pip install -r requirements.txt
-chmod +x *
-cd ..
+
+#secret
 
 git clone https://github.com/m4ll0k/SecretFinder.git secretfinder
 cd secretfinder
@@ -131,7 +128,7 @@ git clone https://github.com/sdushantha/dora.git
 cd dora
 chmod +x *
 pip   install -r  requirements.txt
-echo 'root' | sudo -kSecho 'root' | sudo -kS pip install setuptools
+echo 'root' | sudo -kS pip install setuptools
 echo 'root' | sudo -kS python3 setup.py install
 cd ..
 
@@ -143,10 +140,6 @@ chmod +x *
 echo 'root' | sudo -kS mv gap_v3.0.0_linux_amd64 /usr/local/bin/gap
 
 
-
-
-#github-recon
-curl -sSfL https://raw.githubusercontent.com/trufflesecurity/trufflehog/main/scripts/install.sh | echo 'root' | sudo -kS sh -s -- -b /usr/local/bin
 
 
 #js-enum
@@ -183,17 +176,8 @@ chmod +x *
 echo 'root' | sudo -kS pip install -r requirements.txt
 cd ..
 
-#command injectin
-git clone https://github.com/commixproject/commix.git commix
-cd commix
-chmod +x *
-echo 'root' | sudo -kS pip install -r requirements.txt
-echo 'root' | sudo -ks python3 setup.py install
-echo 'root' | sudo -kS python3 setup.py install
-cd ..
 
 #crlf injection
-echo 'root' | sudo -kS pip install crlfsuite
 go install github.com/dwisiswant0/crlfuzz/cmd/crlfuzz@latest
 
 #lfi
@@ -228,32 +212,8 @@ echo 'root' | sudo -kS mv x86_64-linux-x8 /usr/local/bin/x8
 echo 'root' | sudo -kS pip install arjun  
 echo 'root' | sudo -kS pip install uro
 
-#feroxbuster
-curl -sL https://raw.githubusercontent.com/epi052/feroxbuster/master/install-nix.sh | bash
-echo 'root' | sudo -kS mv feroxbuster  /usr/local/bin/
 
-#rustscan
-wget https://github.com/RustScan/RustScan/releases/download/2.2.3/rustscan-2.2.3-x86_64-linux.tar.xz
-tar -xvf rustscan-2.2.3-x86_64-linux.tar.xz
-chmod +x rustscan-2.2.3-x86_64-linux/rustscan
-echo 'root' | sudo -kS mv rustscan-2.2.3-x86_64-linux/rustscan  /usr/local/bin/
-rm -rf rustscan-2.2.3-x86_64-linux
-curl -L https://raw.githubusercontent.com/RustScan/RustScan/master/config.toml -o ~/.rustscan.toml                 
 
-#asn
-echo 'root' | sudo -kS apt -y install curl whois bind9-host mtr-tiny jq ipcalc grepcidr nmap ncat aha
-curl "https://raw.githubusercontent.com/nitefood/asn/master/asn" -o asn ; chmod +x asn ; echo 'root' | sudo -kS mv asn /usr/bin
-
-#wpscan
-echo 'root' | sudo -kS  apt  install -y libcurl4-openssl-dev libxml2 libxml2-dev libxslt1-dev ruby-dev build-essential libgmp-dev zlib1g-dev ruby-full
-echo 'root' | sudo -kS gem install wpscan
-
-#xray
-wget https://github.com/chaitin/xray/releases/download/1.9.11/xray_linux_amd64.zip
-unzip xray_linux_amd64.zip
-chmod +x xray_linux_amd64
-rm *.zip 
-rm *.tar.gz
 
 echo 'root' | sudo -kS pip install dirsearch 
 echo 'root' | sudo -kS pip install sqlmap
@@ -270,7 +230,6 @@ echo 'root' | sudo -kS pip install alive_progress
 echo -e "\033[36m[+]Installing... Go-Tools  \033[m";
 go install -v github.com/projectdiscovery/notify/cmd/notify@latest
 go install -v github.com/projectdiscovery/subfinder/v2/cmd/subfinder@latest
-go install -v github.com/owasp-amass/amass/v4/...@master
 go install -v github.com/tomnomnom/assetfinder@latest
 go install github.com/hakluke/haklistgen@latest
 go install -v github.com/projectdiscovery/shuffledns/cmd/shuffledns@latest

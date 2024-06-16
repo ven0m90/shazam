@@ -187,6 +187,16 @@ chmod +x *
 echo 'root' | sudo -kS pip install -r requirements.txt
 cd ..
 
+#remout
+git clone https://github.com/ven0m90/remoutscope 
+cd remoutscope
+chmod +x *
+echo 'root' | sudo -kS bash -c install
+echo 'root' | sudo -kS mv remout /usr/local/bin/
+cd ..
+
+
+
 #host headr injection
 go install github.com/mlcsec/headi@latest
 
@@ -261,9 +271,7 @@ go install -v github.com/rverton/webanalyze/cmd/webanalyze@latest
 #copy-path-to-bin
 echo 'root' | sudo -kS cp -r ~/go/bin/*  /usr/local/bin/ 
 
-git clone https://github.com/nil0x42/inscope
-echo 'root' | sudo -kS cp inscope/inscope /usr/local/bin 
-rm -rf inscope
+
 
 echo -e ${GREEN}"[+]Done! Go Tools installed."; echo "";
 sleep 1.5

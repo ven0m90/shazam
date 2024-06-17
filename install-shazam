@@ -147,6 +147,7 @@ go install github.com/i5nipe/nipejs@latest
 echo 'root' | sudo -kS cp -r ~/go/bin/*  /usr/local/bin/    
 
 
+
 git clone https://github.com/blechschmidt/massdns.git ~/tools/massdns 
 cd ~/tools/massdns
 echo 'root' | sudo -kS make
@@ -227,7 +228,8 @@ echo 'root' | sudo -kS pip install uro
 
 echo 'root' | sudo -kS pip install dirsearch 
 echo 'root' | sudo -kS pip install sqlmap
-echo 'root' | sudo -kS pip install git+https://github.com/xnl-h4ck3r/waymore.git -v
+echo 'root' | sudo -kS  pip3 install git+https://github.com/xnl-h4ck3r/waymore.git -v
+echo 'root' | sudo -kS  pip3 install git+https://github.com/xnl-h4ck3r/xnLinkFinder.git -v
 
 echo 'root' | sudo -kS pip install git+https://github.com/sanjai-AK47/ShodanX
 echo 'root' | sudo -kS pip install appdirs

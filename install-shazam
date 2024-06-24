@@ -53,7 +53,7 @@ echo 'root' | sudo -kS wget https://raw.githubusercontent.com/vulnersCom/nmap-vu
 echo 'root' | sudo  -kS nmap --script-updatedb
 
 
-
+echo 'root' | sudo -kS pip install setuptools
 #xss-tools
 git clone https://github.com/devanshbatham/paramspider
 cd paramspider

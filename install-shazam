@@ -211,6 +211,18 @@ echo 'root' | sudo -kS bash setup.sh
 echo 'root' | sudo -kS pip install tqdm
 cd ..
 
+wget https://raw.githubusercontent.com/Dheerajmadhukar/4-ZERO-3/main/403-bypass.sh
+chmod +x 403-bypass.sh
+wget https://raw.githubusercontent.com/0xrobiul/FinEx/main/FinEx.sh
+chmod +x FinEx.sh
+
+git clone https://github.com/hisxo/gitGraber
+cd gitGraber
+chmod +x *
+echo 'root' | sudo -kS pip3 install -r requirements.txt
+cd ..
+
+
 #pip-tools
 echo 'root' | sudo -kS pip install lolcat  wget 
 

@@ -5,7 +5,7 @@ Installing_dependencies (){
 #kali linux
 
 echo 'root' | sudo -kS apt update  ; echo 'root' | sudo -kS apt clean ; echo 'root' | sudo -kS apt autoclean ; echo 'root' | sudo -kS apt upgrade -y ; echo 'root' | sudo -kS apt autoremove -y 
-echo 'root' | sudo -kS apt install toilet lolcat    figlet tar neofetch git vim ripgrep curl  python3 python3-pip  wget  nmap xsltproc  htop   p7zip-full  masscan  gdu  hydra  build-essential libpcap-dev libusb-1.0-0-dev libnetfilter-queue-dev   jq    gnupg lsb-release -y 
+echo 'root' | sudo -kS apt install toilet lolcat   cmake figlet tar neofetch git vim ripgrep curl  python3 python3-pip  wget  nmap xsltproc  htop   p7zip-full  masscan  gdu  hydra  build-essential libpcap-dev libusb-1.0-0-dev libnetfilter-queue-dev   jq    gnupg lsb-release -y 
 
 #go-install
 echo -e "\033[34m[+]Installing GO.. For $OS \033[m"
@@ -182,11 +182,7 @@ cd ..
 go install github.com/dwisiswant0/crlfuzz/cmd/crlfuzz@latest
 
 #lfi
-git clone http://github.com/mzfr/liffy
-cd liffy
-chmod +x *
-echo 'root' | sudo -kS pip install -r requirements.txt
-cd ..
+
 
 #remout
 git clone https://github.com/ven0m90/remoutscope 
@@ -221,6 +217,10 @@ cd gitGraber
 chmod +x *
 echo 'root' | sudo -kS pip3 install -r requirements.txt
 cd ..
+
+git clone https://github.com/ameenmaali/urldedupe.git
+cd urldedupe
+
 
 
 #pip-tools

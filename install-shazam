@@ -220,7 +220,9 @@ cd ..
 
 git clone https://github.com/ameenmaali/urldedupe.git
 cd urldedupe
-
+sudo cmake CMakeLists.txt
+sudo cp  urldedupe /usr/local/bin
+cd ..
 
 
 #pip-tools

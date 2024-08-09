@@ -105,9 +105,8 @@ echo 'root' | sudo -kS pip install -r requirements.txt
 chmod +x *
 cd ..
 
-#usefool tool
+#useful tools
 git clone https://github.com/m4ll0k/BBTz
-
 
 
 #subdomaintakover
@@ -178,8 +177,15 @@ chmod +x *
 echo 'root' | sudo -kS pip install -r requirements.txt
 cd ..
 
+git clone https://github.com/devanshbatham/openredirex
+cd openredirex
+chmod +x *
+echo 'root' | sudo -kS bash setup.sh
+echo 'root' | sudo -kS pip install tqdm
+cd ..
 
-#lfi
+#host headr injection
+go install github.com/mlcsec/headi@latest
 
 
 #remout
@@ -191,22 +197,9 @@ echo 'root' | sudo -kS mv remout /usr/local/bin/
 cd ..
 
 
-
-#host headr injection
-go install github.com/mlcsec/headi@latest
-
-
-
-#open-redirect
-git clone https://github.com/devanshbatham/openredirex
-cd openredirex
-chmod +x *
-echo 'root' | sudo -kS bash setup.sh
-echo 'root' | sudo -kS pip install tqdm
-cd ..
-
 wget https://raw.githubusercontent.com/Dheerajmadhukar/4-ZERO-3/main/403-bypass.sh
 chmod +x 403-bypass.sh
+
 wget https://raw.githubusercontent.com/0xrobiul/FinEx/main/FinEx.sh
 chmod +x FinEx.sh
 
@@ -223,8 +216,6 @@ sudo cp  urldedupe /usr/local/bin
 cd ..
 
 
-#pip-tools
-echo 'root' | sudo -kS pip install lolcat  wget 
 
 #x8
 wget https://github.com/Sh1Yo/x8/releases/download/v4.3.0/x86_64-linux-x8.gz
@@ -234,10 +225,6 @@ echo 'root' | sudo -kS mv x86_64-linux-x8 /usr/local/bin/x8
 
 echo 'root' | sudo -kS pip install arjun  
 echo 'root' | sudo -kS pip install uro
-
-
-
-
 echo 'root' | sudo -kS pip install dirsearch 
 echo 'root' | sudo -kS pip install sqlmap
 echo 'root' | sudo -kS  pip3 install git+https://github.com/xnl-h4ck3r/waymore.git -v
@@ -249,7 +236,6 @@ echo 'root' | sudo -kS pip install alive_progress
 
 
 #go-tools
-
 
 echo -e "\033[36m[+]Installing... Go-Tools  \033[m";
 go install -v github.com/projectdiscovery/notify/cmd/notify@latest
@@ -276,16 +262,14 @@ go install -v github.com/projectdiscovery/dnsx/cmd/dnsx@latest
 go install github.com/KathanP19/Gxss@latest
 go install github.com/projectdiscovery/tlsx/cmd/tlsx@latest
 go install github.com/hakluke/hakip2host@latest
-go install -v  github.com/jaeles-project/gospider@latest
 go install -v github.com/ethicalhackingplayground/bxss@latest
 go install github.com/hahwul/dalfox/v2@latest
 go install github.com/tomnomnom/meg@latest
 go install github.com/hakluke/hakrawler@latest
 
-
 #copy-path-to-bin
+echo 'root' | sudo -kS cp  ~/go/bin/*  /usr/local/bin/ 
 echo 'root' | sudo -kS cp -r ~/go/bin/*  /usr/local/bin/ 
-
 
 
 echo -e ${GREEN}"[+]Done! Go Tools installed."; echo "";
@@ -294,8 +278,6 @@ sleep 1.5
 curl -LO https://raw.githubusercontent.com/lc/gau/master/.gau.toml
 mv .gau.toml ~/.gau.toml
 
-#
-
 echo  -e "\033[32m_________________________________\033[m"
 echo -e "\033[33m[+]Installaltion Done! \033[m"
 
@@ -303,14 +285,9 @@ echo -e "\033[33m[+]Installaltion Done! \033[m"
 }
 tools
 
-
-cd ~
 echo -e "\033[33m[+]Installing nuclei templates \033[m"
 git clone https://github.com/projectdiscovery/nuclei-templates.git ~/nuclei-templates
 git clone https://github.com/0xKayala/fuzzing-templates.git ~/fuzzing-templates
 
-
-
-cd ~
 
 

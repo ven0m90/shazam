@@ -4,8 +4,8 @@
 Installing_dependencies (){
 #kali linux
 
-echo 'root' | sudo -kS apt update  ; echo 'root' | sudo -kS apt clean ; echo 'root' | sudo -kS apt autoclean ; echo 'root' | sudo -kS apt upgrade -y ; echo 'root' | sudo -kS apt autoremove -y 
-echo 'root' | sudo -kS apt install toilet lolcat   cmake figlet tar neofetch git vim ripgrep curl  python3 python3-pip  wget  nmap xsltproc  htop   p7zip-full  masscan  gdu  hydra  build-essential libpcap-dev libusb-1.0-0-dev libnetfilter-queue-dev   jq    gnupg lsb-release -y 
+echo 'root' | sudo -kS apt update  ; echo 'root' | sudo -kS apt clean ; echo 'root' | sudo -kS apt autoclean ;  echo 'root' | sudo -kS apt autoremove -y 
+echo 'root' | sudo -kS apt install -y  python3 python3-pip massdns toilet lolcat   cmake figlet tar neofetch git vim ripgrep curl   wget  nmap xsltproc  htop   p7zip-full  masscan  gdu  hydra  build-essential  libpcap-dev  libusb-1.0-0-dev libnetfilter-queue-dev   jq    gnupg lsb-release unzip 
 
 #go-install
 echo -e "\033[34m[+]Installing GO.. For $OS \033[m"
@@ -14,11 +14,7 @@ echo 'root' | sudo -kS apt install golang -y
 }
 Installing_dependencies
 
-sleep 2
 
-#wordlist
-curl -L https://raw.githubusercontent.com/ven0m90/wordinstall.sh/main/wordinstall.sh -o wordinstall.sh;chmod +x wordinstall.sh;echo 'root' | sudo -kS |bash wordinstall.sh 
-rm wordinstall.sh ;
 
 #installing-tools
 tools(){
@@ -27,8 +23,7 @@ tools(){
 mkdir -p ~/tools
 cd ~/tools
 
-echo -e "\033[33m[+]Installing...Tools \033[m";
-sleep 2
+echo -e "\033[33m[+]Installing... tools for Kali linux \033[m";
 
 curl -LO https://github.com/findomain/findomain/releases/latest/download/findomain-linux.zip
 unzip findomain*
@@ -45,10 +40,8 @@ echo 'root' | sudo -kS rm  LICENSE.txt  README.md aquatone*
 
 echo -e "\033[36m[+]nmap-vulners Updating...\033[m" 
 chmod +rwx /usr/share/nmap/scripts/
-echo 'root' | sudo -kS rm  vulners.nse* 
-echo 'root' | sudo -kS rm  /usr/share/nmap/scripts/vulners.nse*
-echo 'root' | sudo -kS rm http-vulners-regex.nse
-echo 'root' | sudo -kS rm  /usr/share/nmap/scripts/http-vulners-regex.nse
+echo 'root' | sudo -kS rm  vulners.nse 
+echo 'root' | sudo -kS rm  /usr/share/nmap/scripts/vulners.nse
 echo 'root' | sudo -kS wget https://raw.githubusercontent.com/vulnersCom/nmap-vulners/master/vulners.nse ;echo 'root' | sudo -kS mv vulners.nse /usr/share/nmap/scripts/ 
 echo 'root' | sudo  -kS nmap --script-updatedb
 
@@ -146,13 +139,6 @@ echo 'root' | sudo -kS mv gap_v3.0.0_linux_amd64 /usr/local/bin/gap
 go install github.com/i5nipe/nipejs@latest
 echo 'root' | sudo -kS cp -r ~/go/bin/*  /usr/local/bin/    
 
-
-
-git clone https://github.com/blechschmidt/massdns.git ~/tools/massdns 
-cd ~/tools/massdns
-echo 'root' | sudo -kS make
-echo 'root' | sudo -kS make install 
-cd ..
 
 #cors
 git clone  https://github.com/s0md3v/Corsy.git

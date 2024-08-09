@@ -5,7 +5,7 @@ Installing_dependencies (){
 #kali linux
 
 echo 'root' | sudo -kS apt update  ; echo 'root' | sudo -kS apt clean ; echo 'root' | sudo -kS apt autoclean ;  echo 'root' | sudo -kS apt autoremove -y 
-echo 'root' | sudo -kS apt install -y  python3 python3-pip massdns toilet lolcat   cmake figlet tar neofetch git vim ripgrep curl   wget  nmap xsltproc  htop   p7zip-full  masscan  gdu  hydra  build-essential  libpcap-dev  libusb-1.0-0-dev libnetfilter-queue-dev   jq    gnupg lsb-release unzip 
+echo 'root' | sudo -kS apt install -y  python3 python3-pip massdns wpscan  sublist3r toilet lolcat   cmake figlet tar neofetch git vim ripgrep curl   wget  nmap xsltproc  htop   p7zip-full  masscan  gdu  hydra  build-essential  libpcap-dev  libusb-1.0-0-dev libnetfilter-queue-dev   jq    gnupg lsb-release unzip 
 
 #go-install
 echo -e "\033[34m[+]Installing GO.. For $OS \033[m"
@@ -47,7 +47,6 @@ echo 'root' | sudo  -kS nmap --script-updatedb
 
 
 echo 'root' | sudo -kS pip install setuptools
-#xss-tools
 git clone https://github.com/devanshbatham/paramspider
 cd paramspider
 chmod +x *
@@ -58,7 +57,8 @@ cd ..
 #gf
 wget https://raw.githubusercontent.com/emadshanab/Gf-Patterns-Collection/main/set-all.sh
 chmod +x *
-bash set-all.sh
+bash set-all.sh;
+rm  set-all.sh
 
 git  clone https://github.com/takshal/freq
 cd freq
@@ -67,21 +67,25 @@ echo 'root' | sudo -kS go build main.go
 echo 'root' | sudo -kS mv main /usr/local/bin/freq
 cd ..
 
+#xss
+
 echo 'root' | sudo -kS pip install fuzzywuzzy
 echo 'root' | sudo -kS pip install requests
 echo 'root' | sudo -kS pip install tld
+echo 'root' | sudo -kS pip install xsstrike
+echo 'root' | sudo -kS pip install bs4
 
-git clone https://github.com/s0md3v/XSStrike.git
-cd XSStrike
-chmod +x *
-cd ..
-
-#subdomains
-git clone https://github.com/aboul3la/Sublist3r.git
-cd Sublist3r
-chmod +x *
+git clone https://github.com/pwn0sec/PwnXSS
+cd PwnXSS
+chmod 755 -R PwnXSS
 echo 'root' | sudo -kS pip install  -r requirements.txt
 cd ..
+
+git clone https://github.com/pwn0sec/pwnscan.git
+cd pwnscan
+echo 'root' | sudo -kS pip install  -r requirements.txt
+cd ..
+
 
 #sqli
 git clone https://github.com/r0oth3x49/ghauri.git
@@ -101,30 +105,19 @@ echo 'root' | sudo -kS pip install -r requirements.txt
 chmod +x *
 cd ..
 
-#subdomaintakover
-wget https://github.com/Stratus-Security/Subdominator/releases/latest/download/Subdominator
-echo 'root' | sudo -kS chmod +x Subdominator
-echo 'root' | sudo -kS mv Subdominator /usr/local/bin/subdominator
-go install -v github.com/LukaSikic/subzy@latest
+#usefool tool
+git clone https://github.com/m4ll0k/BBTz
 
+
+
+#subdomaintakover
+git clone https://github.com/punk-security/dnsReaper
+cd dnsReaper
+echo 'root' | sudo -kS pip install -r requirements.txt
+chmod +x *
+cd ..
 
 #secret
-
-git clone https://github.com/m4ll0k/SecretFinder.git secretfinder
-cd secretfinder
-chmod +x *
-echo 'root' | sudo -kS pip install -r requirements.txt
-cd ..
-
-#dora
-git clone https://github.com/sdushantha/dora.git
-cd dora
-chmod +x *
-pip   install -r  requirements.txt
-echo 'root' | sudo -kS pip install setuptools
-echo 'root' | sudo -kS python3 setup.py install
-cd ..
-
 wget https://github.com/joanbono/gap/releases/download/v3.0.0/GAP_v3.0.0_linux_amd64.tar.gz
 chmod +x *.tar.gz
 tar -xvf *.gz 
@@ -133,12 +126,23 @@ chmod +x *
 echo 'root' | sudo -kS mv gap_v3.0.0_linux_amd64 /usr/local/bin/gap
 
 
+#js-secret
+git clone https://github.com/m4ll0k/SecretFinder.git secretfinder
+cd secretfinder
+chmod +x *
+echo 'root' | sudo -kS pip install -r requirements.txt
+cd ..
 
-
-#js-enum
+go install -v github.com/edoardottt/cariddi/cmd/cariddi@latest
 go install github.com/i5nipe/nipejs@latest
+go install github.com/MrEmpy/mantra@latest
 echo 'root' | sudo -kS cp -r ~/go/bin/*  /usr/local/bin/    
 
+git clone https://github.com/GerbenJavado/LinkFinder.git
+cd LinkFinder
+chmod +x *
+echo 'root' | sudo -kS python3 setup.py install
+cd ..
 
 #cors
 git clone  https://github.com/s0md3v/Corsy.git
@@ -164,8 +168,16 @@ echo 'root' | sudo -kS pip install -r requirements.txt
 cd ..
 
 
-#crlf injection
+#crlf injection & openredirect
 go install github.com/dwisiswant0/crlfuzz/cmd/crlfuzz@latest
+sudo pip3 install crlfsuite
+
+git clone https://github.com/r0075h3ll/Oralyzer.git
+cd Oralyzer
+chmod +x *
+echo 'root' | sudo -kS pip install -r requirements.txt
+cd ..
+
 
 #lfi
 
@@ -267,9 +279,9 @@ go install github.com/hakluke/hakip2host@latest
 go install -v  github.com/jaeles-project/gospider@latest
 go install -v github.com/ethicalhackingplayground/bxss@latest
 go install github.com/hahwul/dalfox/v2@latest
-go install github.com/sensepost/gowitness@latest
-go install -v github.com/rverton/webanalyze/cmd/webanalyze@latest
-go install github.com/dwisiswant0/go-dork@latest
+go install github.com/tomnomnom/meg@latest
+go install github.com/hakluke/hakrawler@latest
+
 
 #copy-path-to-bin
 echo 'root' | sudo -kS cp -r ~/go/bin/*  /usr/local/bin/ 
